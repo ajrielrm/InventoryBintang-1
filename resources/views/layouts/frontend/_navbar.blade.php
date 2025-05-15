@@ -12,7 +12,7 @@
         <div class="navbar-nav flex-row order-md-last">
             @guest
                 <a href="{{ route('login') }}" class="nav-item mr-2">Login</a>
-                <a href="{{ route('register') }}" class="nav-item">Register</a>
+                <!-- <a href="{{ route('register') }}" class="nav-item">Register</a> -->
             @endguest
             @auth
                 <div class="nav-item dropdown d-none d-md-flex mr-3">

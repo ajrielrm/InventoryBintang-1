@@ -41,7 +41,7 @@
                                             <button
                                                 class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full"
                                                 type="submit">
-                                                Tambah ke keranjang
+                                                Catat Output
                                             </button>
                                         </form>
                                     @else

@@ -3,6 +3,13 @@
 @section('content')
     <x-container>
         <div class="col-12">
+            <!-- Add User Button -->
+            <div class="mb-3">
+                <a href="{{ route('admin.admin.register') }}" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Tambah User
+                </a>
+            </div>
+
             <x-card title="DAFTAR USER" class="card-body p-0">
                 <x-table>
                     <thead>

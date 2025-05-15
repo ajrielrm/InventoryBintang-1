@@ -11,9 +11,6 @@
                     <a href="{{ route('login') }}" class="border px-2 py-1 rounded-lg font-medium hover:bg-sky-900">
                         Masuk
                     </a>
-                    <a href="{{ route('register') }}" class="border px-2 py-1 rounded-lg font-medium hover:bg-sky-900">
-                        Daftar
-                    </a>
                 @endguest
                 @auth
                     <div class="hidden md:flex items-center gap-4">

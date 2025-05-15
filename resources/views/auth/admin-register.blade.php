@@ -24,16 +24,16 @@
 <body class="antialiased border-top-wide border-primary d-flex flex-column">
     <div class="flex-fill d-flex flex-column justify-content-center">
         <div class="container-tight py-6">
-            <form class="card card-md border-0 rounded-3" action="{{ route('register') }}" method="POST">
+            <form class="card card-md border-0 rounded-3" action="{{ route('admin.admin.register.submit') }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <h3 class="text-center mb-3 font-weight-medium">
-                        Daftar
+                        Daftar Admin
                     </h3>
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror"
-                            placeholder="masukan name anda" name="name">
+                            placeholder="masukan nama anda" name="name" required>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -43,31 +43,27 @@
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror"
-                            placeholder="masukan email anda" name="email">
+                            placeholder="masukan email anda" name="email" required>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
-                    <div class="mb-3">
-                    <label class="form-label">Role</label>
-<select class="form-select @error('department') is-invalid @enderror" disabled>
-    <option value="Umum" selected>Umum</option>
-</select>
 
-<!-- Hidden input that actually gets submitted -->
-<input type="hidden" name="department" value="Umum">
-                        @error('department')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                    <!-- Hidden field for admin department -->
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-select" disabled>
+                            <option value="Admin" selected>Admin</option>
+                        </select>
+                        <input type="hidden" name="department" value="Admin">
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">Kata Sandi</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror"
-                            placeholder="masukan kata sandi anda" name="password">
+                            placeholder="masukan kata sandi anda" name="password" required>
                         @error('password')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -77,7 +73,7 @@
                     <div class="mb-3">
                         <label class="form-label">Konfirmasi Kata Sandi</label>
                         <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
-                            placeholder="masukan konfirmasi kata sandi anda" name="password_confirmation">
+                            placeholder="masukan konfirmasi kata sandi anda" name="password_confirmation" required>
                         @error('password_confirmation')
                             <div class="invalid-feedback">
                                 {{ $message }}
